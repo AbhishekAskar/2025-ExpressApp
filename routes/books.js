@@ -3,11 +3,11 @@ const express = require('express');
 const router = express.Router();
 
 router.get("/", (req, res) =>{
-    res.send("User List");
+    res.send("Here is the list of books!");
 })
 
 router.post("/", (req, res) =>{
-    res.send("User Created");
+    res.send("Book has been Added!");
 })
 
 module.exports = router;
