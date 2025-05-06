@@ -2,20 +2,24 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/orders', (req, res) =>{
-    res.send("<h1>Here is all the list of orders<h1>");
+app.get('/products', (req, res) =>{
+    res.send("<h1>Here is the list of all products</h1>");
 })
 
-app.post('/orders', (req, res, next) => {
-    res.send("A new order has been created");
+app.post('/products', (req, res, next) => {
+    res.send("A new order has been added");
 })
 
-app.get('/users', (req, res) =>{
-    res.send("<h1>Here is all the list of all new users<h1>");
+app.get('/categories', (req, res) =>{
+    res.send("<h1>Here is the list of all categories</h1>");
 })
 
-app.post('/users', (req, res, next) => {
-    res.send("A new user has been added");
+app.post('/categories', (req, res, next) => {
+    res.send("A new category has been created");
+})
+
+app.use((req, res) =>{
+    res.status(404).send('<h1>404 - Page Not Found</h1>');
 })
 
 app.listen(port, () => {
